@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Modul 323 Elias Benz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>PDF Dokumentation Kompetenzen Grundlagen</h1>
+    <ul>
+        {% for pdf_document in pdf_documents %}
+            <li><a href="{{ url_for('static', filename='pdf/' + pdf_document) }}" target="_blank">{{ pdf_document }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="footer">
+    <p>&copy; Elias Benz, ©2023</p>
+</div>
+</body>
+</html>
